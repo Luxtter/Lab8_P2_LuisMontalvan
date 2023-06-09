@@ -10,21 +10,20 @@ import java.util.ArrayList;
  *
  * @author luism
  */
-public class Artista {
-    protected String usuario,contrasena,nombre,genero;
+public class Artista extends Usuario{
+    protected String nombre,genero;
     
     
     public Artista() {
+        super();
     }
 
-    public Artista(String usuario, String contrasena, String nombre, String genero) {
-        this.usuario = usuario;
-        this.contrasena = contrasena;
+    public Artista(String nombre, String genero, String usuario, String contrasena) {
+        super(usuario, contrasena);
         this.nombre = nombre;
         this.genero = genero;
-        
     }
-    
+      
     public String getGenero() {
         return genero;
     }
@@ -33,21 +32,12 @@ public class Artista {
         this.genero = genero;
     }
 
-    public String getUsuario() {
-        return usuario;
+    @Override
+    public String toString() {
+        return "Artista{" + "nombre=" + nombre + ", genero=" + genero + '}';
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-    public String getContrasena() {
-        return contrasena;
-    }
-
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
-    }
+    
 
     public String getNombre() {
         return nombre;
@@ -57,9 +47,6 @@ public class Artista {
         this.nombre = nombre;
     }
 
-    @Override
-    public String toString() {
-        return "Artista{" + "usuario=" + usuario + ", contrasena=" + contrasena + ", nombre=" + nombre + '}';
-    }
+    
     
 }

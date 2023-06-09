@@ -18,10 +18,6 @@ public class Banda extends Artista{
         super();
     }
 
-    public Banda(int integrantes, String usuario, String contrasena, String nombre, String genero) {
-        super(usuario, contrasena, nombre, genero);
-        this.integrantes = integrantes;
-    }
     
     public int getIntegrantes() {
         return integrantes;
@@ -31,21 +27,11 @@ public class Banda extends Artista{
         this.integrantes = integrantes;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public Banda(int integrantes, String nombre, String genero, String usuario, String contrasena) {
+        super(nombre, genero, usuario, contrasena);
+        this.integrantes = integrantes;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-    public String getContrasena() {
-        return contrasena;
-    }
-
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
-    }
 
     public String getNombre() {
         return nombre;

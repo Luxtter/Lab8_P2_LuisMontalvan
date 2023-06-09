@@ -5,6 +5,7 @@
 package lab.pkg7p2_luismontalvan;
 
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -30,30 +31,54 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        InicioSesion = new javax.swing.JPanel();
+        jpInicioSesion = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jtfUsuario = new javax.swing.JTextField();
         jpfContrasena = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         jbtnIniciarSesion = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jpAdmin = new javax.swing.JPanel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jlUsuarios = new javax.swing.JList<>();
+        jbtnEliminarU = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jpCrearUsuario = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jpInicioSesion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel1.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
         jLabel1.setText("Inicio de Sesion");
+        jpInicioSesion.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 48, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel2.setText("Usuario");
+        jpInicioSesion.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 132, -1, -1));
+
+        jtfUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfUsuarioActionPerformed(evt);
+            }
+        });
+        jpInicioSesion.add(jtfUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 129, 137, -1));
 
         jpfContrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jpfContrasenaActionPerformed(evt);
             }
         });
+        jpInicioSesion.add(jpfContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 192, 137, -1));
 
         jLabel3.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel3.setText("Contraseña");
+        jpInicioSesion.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 195, -1, -1));
 
         jbtnIniciarSesion.setText("Iniciar Sesion");
         jbtnIniciarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -61,57 +86,117 @@ public class Principal extends javax.swing.JFrame {
                 jbtnIniciarSesionMouseClicked(evt);
             }
         });
+        jpInicioSesion.add(jbtnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, -1, -1));
 
-        javax.swing.GroupLayout InicioSesionLayout = new javax.swing.GroupLayout(InicioSesion);
-        InicioSesion.setLayout(InicioSesionLayout);
-        InicioSesionLayout.setHorizontalGroup(
-            InicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(InicioSesionLayout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addGroup(InicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(InicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jpfContrasena, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                    .addComponent(jtfUsuario))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InicioSesionLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(InicioSesionLayout.createSequentialGroup()
-                .addGap(237, 237, 237)
-                .addComponent(jbtnIniciarSesion)
-                .addContainerGap(262, Short.MAX_VALUE))
+        jLabel4.setText("¿No tiene usuario? Cree uno");
+        jpInicioSesion.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 150, -1));
+
+        jLabel5.setForeground(new java.awt.Color(51, 153, 255));
+        jLabel5.setText("aqui");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
+        jpInicioSesion.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, -1, -1));
+        jpInicioSesion.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 210, 500));
+
+        jScrollPane1.setViewportView(jlUsuarios);
+
+        jbtnEliminarU.setText("Eliminar");
+        jbtnEliminarU.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbtnEliminarUMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(94, 94, 94)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtnEliminarU))
+                .addContainerGap(255, Short.MAX_VALUE))
         );
-        InicioSesionLayout.setVerticalGroup(
-            InicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(InicioSesionLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jLabel1)
-                .addGap(60, 60, 60)
-                .addGroup(InicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jtfUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addGroup(InicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jpfContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(87, 87, 87)
-                .addComponent(jbtnIniciarSesion)
-                .addContainerGap(177, Short.MAX_VALUE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jbtnEliminarU)
+                .addContainerGap(193, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Usuarios", jPanel1);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 595, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 473, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Bitacora", jPanel2);
+
+        javax.swing.GroupLayout jpAdminLayout = new javax.swing.GroupLayout(jpAdmin);
+        jpAdmin.setLayout(jpAdminLayout);
+        jpAdminLayout.setHorizontalGroup(
+            jpAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane1)
+        );
+        jpAdminLayout.setVerticalGroup(
+            jpAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane1)
+        );
+
+        javax.swing.GroupLayout jpCrearUsuarioLayout = new javax.swing.GroupLayout(jpCrearUsuario);
+        jpCrearUsuario.setLayout(jpCrearUsuarioLayout);
+        jpCrearUsuarioLayout.setHorizontalGroup(
+            jpCrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
+        jpCrearUsuarioLayout.setVerticalGroup(
+            jpCrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(InicioSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpInicioSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jpAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jpCrearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(InicioSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpInicioSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jpAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jpCrearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
@@ -126,36 +211,56 @@ public class Principal extends javax.swing.JFrame {
             if (usuarios.get(i) instanceof Admin){
                 if (((Admin)usuarios.get(i)).getUsuario().equals(jtfUsuario.getText())) {
                     if (((Admin)usuarios.get(i)).getContrasena().equals(jpfContrasena.getText())) {
-                        InicioSesion.setVisible(false);
+                        jpInicioSesion.setVisible(false);
+                        uActivo = usuarios.get(i);
+                        jpAdmin.setVisible(true);
+                        
                     }else{
-                        JOptionPane.showMessageDialog(InicioSesion, "Usuario o contraseña incorrecta");
+                        JOptionPane.showMessageDialog(jpInicioSesion, "Usuario o contraseña incorrecta");
                     }
                 }else{
-                    JOptionPane.showMessageDialog(InicioSesion, "Usuario o contraseña incorrecta");
+                    JOptionPane.showMessageDialog(jpInicioSesion, "Usuario o contraseña incorrecta");
                 }
             }else if(usuarios.get(i) instanceof Solista){
                 if (((Solista)usuarios.get(i)).getUsuario().equals(jtfUsuario.getText())) {
                     if (((Solista)usuarios.get(i)).getContrasena().equals(jpfContrasena.getText())) {
-                        InicioSesion.setVisible(false);
+                        jpInicioSesion.setVisible(false);
+                        uActivo = usuarios.get(i);
                     }else{
-                        JOptionPane.showMessageDialog(InicioSesion, "Usuario o contraseña incorrecta");
+                        JOptionPane.showMessageDialog(jpInicioSesion, "Usuario o contraseña incorrecta");
                     }
                 }else{
-                    JOptionPane.showMessageDialog(InicioSesion, "Usuario o contraseña incorrecta");
+                    JOptionPane.showMessageDialog(jpInicioSesion, "Usuario o contraseña incorrecta");
                 }
             }else{
                 if (((Banda)usuarios.get(i)).getUsuario().equals(jtfUsuario.getText())) {
                     if (((Banda)usuarios.get(i)).getContrasena().equals(jpfContrasena.getText())) {
-                        InicioSesion.setVisible(false);
+                        jpInicioSesion.setVisible(false);
+                        uActivo = usuarios.get(i);
                     }else{
-                        JOptionPane.showMessageDialog(InicioSesion, "Usuario o contraseña incorrecta");
+                        JOptionPane.showMessageDialog(jpInicioSesion, "Usuario o contraseña incorrecta");
                     }
                 }else{
-                    JOptionPane.showMessageDialog(InicioSesion, "Usuario o contraseña incorrecta");
+                    JOptionPane.showMessageDialog(jpInicioSesion, "Usuario o contraseña incorrecta");
                 }
             }
         }
     }//GEN-LAST:event_jbtnIniciarSesionMouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        jpInicioSesion.setVisible(false);
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void jtfUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtfUsuarioActionPerformed
+
+    private void jbtnEliminarUMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnEliminarUMouseClicked
+        DefaultListModel modelo = (DefaultListModel)jlUsuarios.getModel();
+        int aelim = jlUsuarios.getSelectedIndex();
+        modelo.remove(aelim);
+        jlUsuarios.setModel(modelo);
+    }//GEN-LAST:event_jbtnEliminarUMouseClicked
 
     /**
      * @param args the command line arguments
@@ -193,13 +298,25 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel InicioSesion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JButton jbtnEliminarU;
     private javax.swing.JButton jbtnIniciarSesion;
+    private javax.swing.JList<String> jlUsuarios;
+    private javax.swing.JPanel jpAdmin;
+    private javax.swing.JPanel jpCrearUsuario;
+    private javax.swing.JPanel jpInicioSesion;
     private javax.swing.JPasswordField jpfContrasena;
     private javax.swing.JTextField jtfUsuario;
     // End of variables declaration//GEN-END:variables
     ArrayList usuarios = new ArrayList();
+    Object uActivo;
 }
