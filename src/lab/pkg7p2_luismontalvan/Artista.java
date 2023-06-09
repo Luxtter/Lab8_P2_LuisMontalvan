@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class Artista {
     protected String usuario,contrasena,nombre,genero;
-    protected ArrayList<Cancion> canciones = new ArrayList();
+    
     
     public Artista() {
     }
@@ -22,8 +22,9 @@ public class Artista {
         this.contrasena = contrasena;
         this.nombre = nombre;
         this.genero = genero;
+        
     }
-
+    
     public String getGenero() {
         return genero;
     }
