@@ -72,6 +72,8 @@ public class Principal extends javax.swing.JFrame {
         jpArtista = new javax.swing.JPanel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
+        jLabel11 = new javax.swing.JLabel();
+        jpUsuario = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -272,6 +274,18 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jpCrearUsuario.add(jpArtista, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 197, 225, -1));
+        jpCrearUsuario.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 230, 490));
+
+        javax.swing.GroupLayout jpUsuarioLayout = new javax.swing.GroupLayout(jpUsuario);
+        jpUsuario.setLayout(jpUsuarioLayout);
+        jpUsuarioLayout.setHorizontalGroup(
+            jpUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jpUsuarioLayout.setVerticalGroup(
+            jpUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -288,6 +302,11 @@ public class Principal extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jpCrearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jpUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -301,6 +320,11 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jpCrearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jpUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -378,8 +402,27 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox1MouseClicked
 
     private void jbtnCrearUMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnCrearUMouseClicked
+        DefaultListModel modelo = (DefaultListModel)jlUsuarios.getModel();
         if (jCheckBox1.isSelected()) {
-            
+            if (jRadioButton1.isSelected()) {
+                usuarios.add(new Solista((Integer)(jSpinner1.getValue()), jtfCrearU.getText(), jpfCrearC.getText(), jtfNombre.getText(), jtfGeneroM.getText()));
+                modelo.addElement(usuarios.get(usuarios.size()-1));
+                jlUsuarios.setModel(modelo);
+                JOptionPane.showMessageDialog(this, "Usuario creado exitosamente");
+                jpCrearUsuario.setVisible(false);
+                jCheckBox1.setSelected(false);
+                jpInicioSesion.setVisible(true);
+            } else {
+                usuarios.add(new Banda((Integer)(jSpinner1.getValue()), jtfCrearU.getText(), jpfCrearC.getText(), jtfNombre.getText(), jtfGeneroM.getText()));
+                modelo.addElement(usuarios.get(usuarios.size()-1));
+                jlUsuarios.setModel(modelo);
+                JOptionPane.showMessageDialog(this, "Usuario creado exitosamente");
+                jpCrearUsuario.setVisible(false);
+                jCheckBox1.setSelected(false);
+                jpInicioSesion.setVisible(true);
+            }
+        }else{
+            usuarios.add(new Usuario(jtfCrearU.getText(), jpfCrearC.getText()));
         }
     }//GEN-LAST:event_jbtnCrearUMouseClicked
 
@@ -446,6 +489,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -473,6 +517,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jpCrearUsuario;
     private javax.swing.JPanel jpInicioSesion;
     private javax.swing.JPanel jpOpcAdicioionales;
+    private javax.swing.JPanel jpUsuario;
     private javax.swing.JPasswordField jpfContrasena;
     private javax.swing.JPasswordField jpfCrearC;
     private javax.swing.JTextField jtfCrearU;

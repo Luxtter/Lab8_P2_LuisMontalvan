@@ -27,7 +27,7 @@ public class Banda extends Artista{
         this.integrantes = integrantes;
     }
 
-    public Banda(int integrantes, String nombre, String genero, String usuario, String contrasena) {
+    public Banda(int integrantes,String usuario, String contrasena, String nombre, String genero) {
         super(nombre, genero, usuario, contrasena);
         this.integrantes = integrantes;
     }
